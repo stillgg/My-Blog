@@ -6,13 +6,15 @@ function App() {
   return (
     <div className="App">
         <div className='Logo'>
-            <svg width="1000"
-                 height="1000"
+            <svg width="500"
+                 height="500"
                  xmlns="http://www.w3.org/2000/svg"
                  xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                  // viewBox="0 0 100 300"
+                 // viewBox="0 0 803 687"
+                 viewBox="0 0 503 487"
                  preserveAspectRatio="xMidYMid meet"
-                 viewBox="-300 -20 803 587"
+                 // viewBox="-300 -20 803 587"
                  // style="enable-background:new 0 0 503 487;"
                  xmlSpace="preserve">
                 <style>
