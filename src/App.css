@@ -1,0 +1,12 @@
+.App {
+  position: relative;
+  height: 100vh;
+}
+.App svg {
+  height: 45vmin;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/*# sourceMappingURL=App.css.map */
