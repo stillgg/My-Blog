@@ -1,0 +1,1 @@
+export const GET_ITEM = 'ONCLICK/GET_ITEM'
