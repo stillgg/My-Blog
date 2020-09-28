@@ -2,7 +2,7 @@ import React from 'react'
 import './mainPage.scss'
 import {Nav} from "./nav/Nav"
 import {Main} from "./main/Main"
-import {BrowserRouter, Route} from "react-router-dom"
+import {BrowserRouter} from "react-router-dom"
 
 export function MainPage() {
     return(

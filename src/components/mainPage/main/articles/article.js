@@ -26,7 +26,6 @@ class Article extends React.Component{
 
     render() {
         const articles = this.props.articles.data
-
         return (
             <div className='articles'>
                 {articles.map(i => {
@@ -54,7 +53,6 @@ class Article extends React.Component{
 
 
 const mapStateToProps = state =>{
-    console.log(state)
     return state
 }
 

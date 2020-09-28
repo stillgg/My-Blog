@@ -1,1 +1,3 @@
 export const GET_ITEM = 'ONCLICK/GET_ITEM'
+
+export const GET_POSITION = 'GET_POSITION_ON_READ_PAGE'

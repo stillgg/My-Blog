@@ -1,4 +1,4 @@
-import {GET_ITEM} from "../types";
+import {GET_ITEM} from '../types'
 
 const initionalState = {
     data : [
@@ -170,7 +170,7 @@ Morbi fringilla eget velit feugiat tincidunt. Ut bibendum dolor non pellentesque
 Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet felis tempus imperdiet eu quis metus. Fusce volutpat pharetra eros quis finibus. Donec et luctus ante. Nullam a neque vitae erat condimentum imperdiet vel nec ex. Duis varius elit ac mollis pulvinar. Etiam vestibulum diam at leo scelerisque, a rhoncus justo mollis. Vivamus rutrum lorem eget leo interdum accumsan. Aenean sapien odio, pretium in orci et, suscipit convallis nisl. Fusce metus massa, placerat eu ante sed, dignissim congue sem. Quisque semper sed est quis feugiat. Vivamus tristique leo magna, sed tincidunt nisi varius et. Suspendisse aliquam ullamcorper ligula ac luctus.`
         }
     ],
-    id : 1,
+    id : 1
 }
 
 export const articleReducer = ( state = initionalState, action) => {
@@ -181,7 +181,7 @@ export const articleReducer = ( state = initionalState, action) => {
             return {...state, id: action.payload}
 
         default :
-            return initionalState
+            return state
     }
 }
 

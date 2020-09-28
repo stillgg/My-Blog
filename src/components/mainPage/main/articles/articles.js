@@ -19,6 +19,10 @@ export function Articles() {
             <div className="articles">
                 <Article />
             </div>
+
+            <div className="prevNextButtons">
+
+            </div>
         </div>
     )
 }

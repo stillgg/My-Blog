@@ -2,7 +2,7 @@ import React from 'react'
 
 import {connect} from 'react-redux'
 
-const StartPage = (props) => {
+const StartPage = () => {
     return (
         <div className='startPageContainer'>
             <div className="wrapper">
