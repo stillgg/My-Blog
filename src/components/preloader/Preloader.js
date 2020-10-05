@@ -8,15 +8,28 @@ export class Preloader extends React.Component{
         this.state = {
             contentReady : false
         }
-        this.getContent = this.getContent.bind(this)
+
+        // this.getContent = this.getContent.bind(this)
     }
 
-    getContent(){
-        setTimeout(()=>{
+    // getContent(){
+    //     setTimeout(()=>{
+    //         this.setState({
+    //             contentReady : true
+    //         })
+    //     },2900)
+    // }
+
+    componentDidMount() {
+        this.preloader = setTimeout(() => {
             this.setState({
-                contentReady : true
+                contentReady: true
             })
-        },2900)
+        }, 2900)
+    }
+
+    componentWillUnmount() {
+        clearTimeout(this.preloader)
     }
 
     render() {
@@ -25,7 +38,7 @@ export class Preloader extends React.Component{
             return <MainPage/>
         }
 
-        this.getContent()
+        // this.getContent()
 
         return (
             <div className="App">
