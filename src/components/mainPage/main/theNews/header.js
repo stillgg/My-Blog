@@ -1,24 +1,25 @@
 import React from "react"
 import {connect} from "react-redux"
+
 import {
-    changeDataPageArticle,
-    changeFilteredDataArticle,
-    changeInputArticle,
-    changeHowManyPagesArticle
-} from "../../../../store/actions/article/articleAction"
+    changeDataPageTheNews,
+    changeFilteredDataTheNews,
+    changeInputTheNews,
+    changeHowManyPagesTheNews
+} from "../../../../store/actions/theNews/theNewsAction"
 
 
-const Header = (props)=>{
-    const data = props.articles.data
-    const text = props.articles.text
+const HeaderTheNews = (props)=>{
+    const data = props.theNews.data
+    const text = props.theNews.text
     return(
         <div className="header">
-            <h1>Articles</h1>
+            <h1>The NEWS</h1>
 
             <div className="container">
-                <input type="text" placeholder="Search article"
+                <input type="text" placeholder="Search the news" value={text}
                        onChange={(e) => {
-                           props.changeInputArticle(e.target.value)
+                           props.changeInputTheNews(e.target.value)
 
                            const filteredData = data.filter(item => {
                                const compareValue = item.title.toLowerCase().replace(/\s/g, '')
@@ -29,14 +30,13 @@ const Header = (props)=>{
                                }
                            })
 
-                           props.changeFilteredDataArticle(filteredData)
+                           props.changeFilteredDataTheNews(filteredData)
 
                            const howManyPages = Math.round(filteredData.length/6)
-                           props.changeHowManyPagesArticle(howManyPages)
-
-                           props.changeDataPageArticle(1)
+                           props.changeHowManyPagesTheNews(howManyPages)
+                           props.changeDataPageTheNews(1)
                        }}
-                       value={text}
+
                        maxLength="18"/>
                 <div className="search"></div>
             </div>
@@ -47,10 +47,10 @@ const Header = (props)=>{
 const mapStateToProps = (props) => props
 
 const mapDispatchToProps = {
-    changeInputArticle,
-    changeFilteredDataArticle,
-    changeDataPageArticle,
-    changeHowManyPagesArticle
+    changeInputTheNews,
+    changeFilteredDataTheNews,
+    changeDataPageTheNews,
+    changeHowManyPagesTheNews
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Header)
+export default connect(mapStateToProps,mapDispatchToProps)(HeaderTheNews)

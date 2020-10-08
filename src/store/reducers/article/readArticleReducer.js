@@ -1,4 +1,4 @@
-import {GET_POSITION} from '../types'
+import {GET_POSITION} from '../../types/articleTypes'
 
 const initionalState = {
     value : 0

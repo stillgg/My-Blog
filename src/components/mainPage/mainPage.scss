@@ -17,6 +17,7 @@ $midGrey: #2e2e2e;
 $darkGrey: #252525;
 $green: #00ffb4;
 $lightGrey:#4e4e4e;
+$boxShadow:0 0 10px rgba(0,0,0,0.5);
 
 $curve: cubic-bezier(0.23, 1, 0.32, 1);
 
@@ -581,6 +582,7 @@ a {
           font-size: 1.5rem;
           margin: 0 10px 0 0;
           color: black;
+          transition: .5s all;
           &:hover{
             background: $lightGrey;
             color: #ffffff;
@@ -599,6 +601,101 @@ a {
     .aboutMe{
       p{
         font-size: 1.5rem;
+      }
+      .contactsWrapper{
+        width: 400px;
+        margin: 0 auto;
+        //box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        .contacts{
+          padding: 20px;
+
+          .photo {
+            width: 0;
+            height: 0;
+            margin: 0 auto;
+            transition: 1s all;
+          }
+
+          .photoActive {
+            width: 130px;
+            height: 130px;
+            background: url("../../../src/image/photo.png") no-repeat;
+            background-size: cover;
+            border-radius: 50%;
+            margin: 15px auto 0;
+            box-shadow: $boxShadow;
+            transition: .5s all;
+          }
+
+          .text, .textActive{
+            font-size: 1.5rem;
+            border: 1px solid rgba(0,0,0,0.5);
+            width: 50%;
+            margin: 0 auto;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+          }
+
+          .textActive{
+            margin-top: 20px;
+            background: $lightGrey;
+            color: #ffffff;
+            transition: .5s all;
+          }
+
+          .socialNetworks, .socialNetworksActive{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            margin: 0 0 0 20px;
+            .textImg{
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              padding: 0;
+              transition: .5s all;
+            }
+
+            .iconGmail, .iconGithub{
+              width: 0;
+              height: 0;
+              transition: .5s all;
+            }
+
+            a{
+              font-size: 0;
+              color: $midGrey;
+              font-weight: bold;
+              margin: 0 0 0 10px;
+              transition: .5s all;
+            }
+          }
+
+          .socialNetworksActive{
+
+            .iconGmail, .iconGithub{
+              width: 45px;
+              height: 45px;
+              transition: .5s all;
+            }
+
+            .textImg{
+              padding: 15px;
+              transition: .5s all;
+              &:first-child{
+                margin: 25px 0 0 0;
+              }
+            }
+
+            a{
+              font-size: 1.3rem;
+              opacity: 1;
+              transition: .5s all;
+            }
+          }
+        }
       }
     }
 
@@ -644,6 +741,7 @@ a {
               background: #00ffb4;
               left: 0;
               top: 60px;
+              transition: .5s all;
             }
 
             .lineWrapper{

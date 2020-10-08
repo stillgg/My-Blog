@@ -2,21 +2,19 @@ import React from "react"
 
 import {connect} from "react-redux"
 
-import {getPositionArticle} from "../../../../store/actions/article/articleAction"
+import {getPositionTheNews} from "../../../../store/actions/theNews/theNewsAction"
 
 
-
-
-class ReadArticle extends React.Component{
+class ReadNews extends React.Component{
     constructor(props) {
         super(props)
     }
 
     componentDidMount() {
         this.getPosition = setInterval(()=>{
-                const x = (window.pageYOffset * 100) / (document.body.scrollHeight - document.documentElement.clientHeight)
-                return this.props.getPositionArticle(Math.round(x))
-            },100)
+            const x = (window.pageYOffset * 100) / (document.body.scrollHeight - document.documentElement.clientHeight)
+            return this.props.getPositionTheNews(Math.round(x))
+        },100)
     }
 
     componentWillUnmount() {
@@ -24,9 +22,9 @@ class ReadArticle extends React.Component{
     }
 
     render(){
-        const id = this.props.articles.id
-        const article = this.props.articles.data[id-1]
-        const value = this.props.readArticle.value
+        const id = this.props.theNews.id
+        const article = this.props.theNews.data[id-1]
+        const value = this.props.readNews.value
 
         return (
             <div className='readArticle'>
@@ -55,7 +53,7 @@ const mapStateToProps = state =>{
 }
 
 const mapDispatchToProps = {
-    getPositionArticle
+    getPositionTheNews
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(ReadArticle)
+export default connect(mapStateToProps,mapDispatchToProps)(ReadNews)

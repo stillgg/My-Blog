@@ -2,27 +2,25 @@ import React from "react"
 import {Link} from "react-router-dom"
 import {connect} from "react-redux"
 
-import {changeFilteredDataArticle, getDataArticle} from "../../../../store/actions/article/articleAction"
+import {changeFilteredDataTheNews, getDataTheNews} from "../../../../store/actions/theNews/theNewsAction"
 
 
-class RenderAllArticle extends React.Component{
-
+class RenderAllNews extends React.Component{
     render() {
-        const howPage = this.props.articles.howPage
+        const howPage = this.props.theNews.howPage
 
         const getDataByHowPage = (data,howPage) => {
-                const id = howPage * 6
-                return data.slice(id-6,id)
+            const id = howPage * 6
+            return data.slice(id-6,id)
         }
 
-        const data = getDataByHowPage( this.props.articles.data, howPage )
-        const filteredData = getDataByHowPage( this.props.articles.filteredData,howPage)
+        const data = getDataByHowPage( this.props.theNews.data, howPage )
+        const filteredData = getDataByHowPage( this.props.theNews.filteredData,howPage)
+        const text = this.props.theNews.text
 
-
-        if( this.props.articles.text ){
-
+        if(text){
             if(filteredData.length === 0){
-                return <p className='message'>Articles is Not defined</p>
+                return <p className='message'>the News is Not defined</p>
             }
 
             return (
@@ -34,7 +32,7 @@ class RenderAllArticle extends React.Component{
                                     <h2>{i.title}</h2>
 
                                     <div className='read-btn-wrapper'>
-                                        <Link onClick={() => this.props.getDataArticle(i.id)} to='/article' className='read-btn'>
+                                        <Link onClick={() => this.props.getDataTheNews(i.id)} to='/news' className='read-btn'>
                                             read
                                         </Link>
                                     </div>
@@ -56,7 +54,7 @@ class RenderAllArticle extends React.Component{
                                 <h2>{i.title}</h2>
 
                                 <div className='read-btn-wrapper'>
-                                    <Link onClick={() => this.props.getDataArticle(i.id)} to='/article' className='read-btn'>
+                                    <Link onClick={() => this.props.getDataTheNews(i.id)} to='/news' className='read-btn'>
                                         read
                                     </Link>
                                 </div>
@@ -75,9 +73,9 @@ const mapStateToProps = state =>{
 }
 
 const mapDispatchToProps = {
-    getDataArticle,
-    changeFilteredDataArticle
+    getDataTheNews,
+    changeFilteredDataTheNews
 }
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(RenderAllArticle)
+export default connect(mapStateToProps,mapDispatchToProps)(RenderAllNews)

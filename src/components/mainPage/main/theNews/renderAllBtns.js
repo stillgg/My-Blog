@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import {connect} from "react-redux"
-import {changeDataPageArticle} from "../../../../store/actions/article/articleAction"
+import {changeDataPageTheNews} from "../../../../store/actions/theNews/theNewsAction"
 
 class RenderAllBtns extends Component{
     render() {
-        const howManyPages = this.props.articles.howManyPages
+        const howManyPages = this.props.theNews.howManyPages
 
         function getBtns(value) { /*getBtnsHowManyPages*/
             const arr = []
@@ -22,11 +22,13 @@ class RenderAllBtns extends Component{
                     btns.map( (item,id) =>{
                         let className = "btn"
 
+
                         if(btns.length === 1){
                             return null
                         }
 
-                        if(id === this.props.articles.howPage-1){
+
+                        if(id === this.props.theNews.howPage-1){
                             className = "btn active-btn"
                         }
 
@@ -45,7 +47,7 @@ class RenderAllBtns extends Component{
                                     i.classList.remove('active-btn')
                                 }
 
-                                return this.props.changeDataPageArticle(id+1)
+                                return this.props.changeDataPageTheNews(id+1)
 
                             }}>{item}</div>
                     })
@@ -58,7 +60,7 @@ class RenderAllBtns extends Component{
 const mapStateToProps = (state) => state
 
 const mapDispatchToProps = {
-    changeDataPageArticle
+    changeDataPageTheNews
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(RenderAllBtns)

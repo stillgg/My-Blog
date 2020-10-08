@@ -1,10 +1,16 @@
-import {GET_ITEM, CHANGE_ARTICLES_PAGE, CHANGE_INPUT, CHANGE_FILTERED_DATA, CHANGE_HOW_MANY_PAGES} from '../types'
+import {
+    CHANGE_NEWS_PAGE_NEWS, /* change how page is active */
+    CHANGE_FILTERED_DATA_NEWS,
+    CHANGE_HOW_MANY_PAGES_NEWS,
+    CHANGE_INPUT_NEWS,
+    GET_ITEM_NEWS
+} from "../../types/theNewsTypes"
 
 const initionalState = {
-    data : [
+    data: [
         {
             id: 1,
-            title: "Lorem Ipsum1",
+            title: "The News1",
             text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
 
 Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
@@ -32,7 +38,7 @@ Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet fel
 
         {
             id: 2,
-            title: "Lorem Ipsum2",
+            title: "The News2",
             text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
 
 Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
@@ -60,7 +66,7 @@ Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet fel
 
         {
             id: 3,
-            title: "Lorem Ipsum3",
+            title: "The News3",
             text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
 
 Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
@@ -88,7 +94,7 @@ Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet fel
 
         {
             id: 4,
-            title: "Lorem Ipsum4",
+            title: "The News4",
             text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
 
 Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
@@ -116,7 +122,7 @@ Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet fel
 
         {
             id: 5,
-            title: "Lorem Ipsum5",
+            title: "The News5",
             text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
 
 Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
@@ -144,7 +150,7 @@ Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet fel
 
         {
             id: 6,
-            title: "Lorem Ipsum6",
+            title: "The News6",
             text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
 
 Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
@@ -173,7 +179,7 @@ Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet fel
 
         {
             id: 7,
-            title: "Lorem Ipsum7",
+            title: "The News7",
             text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
 
 Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
@@ -201,7 +207,7 @@ Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet fel
 
         {
             id: 8,
-            title: "Lorem Ipsum8",
+            title: "The News8",
             text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
 
 Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
@@ -229,7 +235,7 @@ Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet fel
 
         {
             id: 9,
-            title: "Lorem Ipsum9",
+            title: "The News9",
             text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
 
 Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
@@ -257,7 +263,7 @@ Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet fel
 
         {
             id: 10,
-            title: "Lorem Ipsum10",
+            title: "The News10",
             text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
 
 Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
@@ -285,7 +291,7 @@ Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet fel
 
         {
             id: 11,
-            title: "Lorem Ipsum11",
+            title: "The News11",
             text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
 
 Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
@@ -313,7 +319,7 @@ Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet fel
 
         {
             id: 12,
-            title: "Lorem Ipsum12",
+            title: "The News12",
             text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
 
 Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
@@ -342,7 +348,7 @@ Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet fel
 
         {
             id: 13,
-            title: "Lorem Ipsum13",
+            title: "The News13",
             text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
 
 Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
@@ -370,7 +376,7 @@ Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet fel
 
         {
             id: 14,
-            title: "Lorem Ipsum14",
+            title: "The News14",
             text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
 
 Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
@@ -398,7 +404,7 @@ Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet fel
 
         {
             id: 15,
-            title: "Lorem Ipsum15",
+            title: "The News15",
             text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
 
 Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
@@ -426,7 +432,7 @@ Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet fel
 
         {
             id: 16,
-            title: "Lorem Ipsum16",
+            title: "The News16",
             text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
 
 Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
@@ -454,7 +460,7 @@ Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet fel
 
         {
             id: 17,
-            title: "Lorem Ipsum17",
+            title: "The News17",
             text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
 
 Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
@@ -482,7 +488,119 @@ Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet fel
 
         {
             id: 18,
-            title: "Lorem Ipsum18",
+            title: "The News18",
+            text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
+
+Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
+
+Integer pretium velit non gravida vulputate. Integer varius est vitae aliquet imperdiet. Suspendisse efficitur nunc magna, non dignissim metus imperdiet at. Nullam nec ligula nisl. Etiam et velit quis mauris ullamcorper molestie eget at risus. Vivamus felis tellus, maximus ut elit eget, efficitur tincidunt ex. Ut eget scelerisque orci. Nunc a tincidunt mauris. Vestibulum aliquam vulputate nulla at accumsan. Nulla in mauris quis ante convallis pharetra eu sed elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent iaculis tempor sem.
+
+Maecenas ex nulla, vehicula eu tristique pulvinar, accumsan eu diam. Nam sagittis ex eget felis feugiat porttitor at maximus metus. Ut et luctus lectus. Mauris mauris tellus, condimentum sed nunc eget, blandit finibus quam. Morbi blandit fermentum pulvinar. Integer sit amet ligula maximus, facilisis erat non, semper libero. Aliquam elementum rutrum purus, in sodales tellus interdum non. Aenean euismod sapien non diam convallis, nec mattis enim varius. Quisque eros dolor, ultrices et placerat id, vehicula et risus. Nunc rutrum pharetra congue. Pellentesque at lorem gravida, suscipit nisi in, rutrum nisl. Donec at lectus ut risus lobortis placerat ut at arcu. Proin magna leo, fermentum sed sollicitudin sed, posuere placerat dui. Ut id ex dolor. Donec a risus consectetur, vehicula mauris id, laoreet sem. Nullam sit amet justo scelerisque, convallis dolor quis, sollicitudin eros.
+
+Pellentesque cursus leo risus, in elementum sem ullamcorper nec. Integer velit eros, consequat at gravida bibendum, dictum in orci. Donec ut tincidunt odio. Nullam rhoncus eu nisi nec sodales. Pellentesque ornare est vitae semper pretium. Suspendisse fermentum quam eget sapien malesuada, sit amet consequat neque accumsan. Nam laoreet hendrerit feugiat. Phasellus posuere lorem non erat lobortis, at maximus orci molestie. Nulla consectetur placerat lobortis.
+
+Nulla justo mi, dapibus a tincidunt sit amet, ultrices nec mauris. Phasellus a mi felis. Phasellus vulputate ligula ut dui blandit, in hendrerit erat dapibus. Ut et purus eu lorem aliquam dapibus vitae quis justo. Sed condimentum scelerisque risus, vel euismod dui dictum eget. Vestibulum hendrerit, nulla sit amet volutpat condimentum, nulla nisl dictum arcu, sed dapibus nulla purus ac dui. Integer magna velit, tincidunt vitae volutpat sed, euismod ac nibh. Pellentesque ac enim sollicitudin, rhoncus lectus at, finibus ipsum. Cras interdum lobortis blandit. Pellentesque elementum nulla commodo bibendum tincidunt. Sed tincidunt urna sit amet turpis auctor, eu luctus dui elementum. Vestibulum laoreet dui sit amet libero pulvinar, et malesuada odio maximus. Praesent sit amet velit vel magna vestibulum convallis ut at dui. Praesent vitae pretium tortor. In eget lectus purus.
+
+Pellentesque mollis sem non ex vehicula dapibus. Aliquam dictum dictum mollis. Integer faucibus, ex in finibus hendrerit, ex dui rutrum nisi, et sollicitudin ante magna et ipsum. Nunc auctor libero quis erat efficitur iaculis. Etiam elementum dui sed ante pulvinar, ut imperdiet velit sodales. Nullam sagittis, velit eget bibendum tristique, elit felis pretium velit, ac laoreet libero nibh viverra mi. Sed at orci non turpis ultricies condimentum quis non dui. Nulla rutrum fermentum odio, in dictum nulla suscipit eu. Phasellus porttitor blandit lorem. In hac habitasse platea dictumst. Aliquam auctor vestibulum lectus eget laoreet. Vestibulum urna leo, molestie porta sapien vitae, pellentesque varius ante. Phasellus ornare lacus sit amet est imperdiet elementum.
+
+Nam feugiat augue hendrerit consequat dictum. Nulla sit amet sem fermentum, rhoncus arcu vel, tincidunt nibh. Curabitur ac aliquam ipsum, suscipit cursus quam. Morbi sit amet tincidunt leo. Vestibulum vel venenatis urna, id vulputate erat. Fusce est nunc, porttitor sit amet dui faucibus, tempor lobortis orci. Duis libero lorem, maximus ut ornare a, ultrices ac enim. Suspendisse potenti. Proin tempus congue purus, nec condimentum diam vulputate et.
+
+In non mattis elit. Nunc augue orci, rhoncus sed quam id, consectetur feugiat lectus. Mauris lacinia purus tristique velit maximus, a ultrices lectus tempor. Proin vitae tortor turpis. Etiam sit amet nisl quis eros ultricies scelerisque id non leo. Nulla lacinia tincidunt feugiat. Praesent eget iaculis erat, at cursus erat. Etiam dapibus erat at luctus scelerisque. Pellentesque fermentum dolor non molestie semper. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed id aliquet erat. Suspendisse tempus dolor ac enim rutrum, at tempus libero egestas.
+
+Aenean in odio id enim aliquet facilisis. Cras semper imperdiet nisi, vitae finibus arcu pretium et. Vestibulum in elementum nunc. Nullam tincidunt, nibh non condimentum dictum, felis mi dictum erat, nec rutrum dui diam nec dolor. Fusce eget est urna. Donec lacus mauris, rhoncus non scelerisque quis, commodo eu ligula. Nulla consectetur faucibus velit, sed congue sem fermentum non. Quisque convallis condimentum aliquam. Fusce sollicitudin egestas mi, non eleifend nulla vulputate egestas. Pellentesque nisl nibh, sollicitudin a augue quis, lacinia suscipit lacus. Integer vulputate in tellus in mattis. Etiam rutrum dui sit amet tellus imperdiet porta. Vestibulum ac augue efficitur, placerat velit ac, tincidunt velit. Curabitur ultrices efficitur sollicitudin.
+
+Morbi fringilla eget velit feugiat tincidunt. Ut bibendum dolor non pellentesque vulputate. Suspendisse mollis lacus turpis, a mattis sem viverra at. Integer dignissim sem iaculis, pellentesque nibh et, sodales nulla. Ut ultricies nibh sit amet ipsum elementum mattis. In lorem nunc, semper vitae magna eu, luctus placerat sem. Morbi mauris quam, efficitur nec facilisis at, iaculis a nibh.
+
+Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet felis tempus imperdiet eu quis metus. Fusce volutpat pharetra eros quis finibus. Donec et luctus ante. Nullam a neque vitae erat condimentum imperdiet vel nec ex. Duis varius elit ac mollis pulvinar. Etiam vestibulum diam at leo scelerisque, a rhoncus justo mollis. Vivamus rutrum lorem eget leo interdum accumsan. Aenean sapien odio, pretium in orci et, suscipit convallis nisl. Fusce metus massa, placerat eu ante sed, dignissim congue sem. Quisque semper sed est quis feugiat. Vivamus tristique leo magna, sed tincidunt nisi varius et. Suspendisse aliquam ullamcorper ligula ac luctus.`
+        },
+
+        {
+            id: 19,
+            title: "The News19",
+            text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
+
+Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
+
+Integer pretium velit non gravida vulputate. Integer varius est vitae aliquet imperdiet. Suspendisse efficitur nunc magna, non dignissim metus imperdiet at. Nullam nec ligula nisl. Etiam et velit quis mauris ullamcorper molestie eget at risus. Vivamus felis tellus, maximus ut elit eget, efficitur tincidunt ex. Ut eget scelerisque orci. Nunc a tincidunt mauris. Vestibulum aliquam vulputate nulla at accumsan. Nulla in mauris quis ante convallis pharetra eu sed elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent iaculis tempor sem.
+
+Maecenas ex nulla, vehicula eu tristique pulvinar, accumsan eu diam. Nam sagittis ex eget felis feugiat porttitor at maximus metus. Ut et luctus lectus. Mauris mauris tellus, condimentum sed nunc eget, blandit finibus quam. Morbi blandit fermentum pulvinar. Integer sit amet ligula maximus, facilisis erat non, semper libero. Aliquam elementum rutrum purus, in sodales tellus interdum non. Aenean euismod sapien non diam convallis, nec mattis enim varius. Quisque eros dolor, ultrices et placerat id, vehicula et risus. Nunc rutrum pharetra congue. Pellentesque at lorem gravida, suscipit nisi in, rutrum nisl. Donec at lectus ut risus lobortis placerat ut at arcu. Proin magna leo, fermentum sed sollicitudin sed, posuere placerat dui. Ut id ex dolor. Donec a risus consectetur, vehicula mauris id, laoreet sem. Nullam sit amet justo scelerisque, convallis dolor quis, sollicitudin eros.
+
+Pellentesque cursus leo risus, in elementum sem ullamcorper nec. Integer velit eros, consequat at gravida bibendum, dictum in orci. Donec ut tincidunt odio. Nullam rhoncus eu nisi nec sodales. Pellentesque ornare est vitae semper pretium. Suspendisse fermentum quam eget sapien malesuada, sit amet consequat neque accumsan. Nam laoreet hendrerit feugiat. Phasellus posuere lorem non erat lobortis, at maximus orci molestie. Nulla consectetur placerat lobortis.
+
+Nulla justo mi, dapibus a tincidunt sit amet, ultrices nec mauris. Phasellus a mi felis. Phasellus vulputate ligula ut dui blandit, in hendrerit erat dapibus. Ut et purus eu lorem aliquam dapibus vitae quis justo. Sed condimentum scelerisque risus, vel euismod dui dictum eget. Vestibulum hendrerit, nulla sit amet volutpat condimentum, nulla nisl dictum arcu, sed dapibus nulla purus ac dui. Integer magna velit, tincidunt vitae volutpat sed, euismod ac nibh. Pellentesque ac enim sollicitudin, rhoncus lectus at, finibus ipsum. Cras interdum lobortis blandit. Pellentesque elementum nulla commodo bibendum tincidunt. Sed tincidunt urna sit amet turpis auctor, eu luctus dui elementum. Vestibulum laoreet dui sit amet libero pulvinar, et malesuada odio maximus. Praesent sit amet velit vel magna vestibulum convallis ut at dui. Praesent vitae pretium tortor. In eget lectus purus.
+
+Pellentesque mollis sem non ex vehicula dapibus. Aliquam dictum dictum mollis. Integer faucibus, ex in finibus hendrerit, ex dui rutrum nisi, et sollicitudin ante magna et ipsum. Nunc auctor libero quis erat efficitur iaculis. Etiam elementum dui sed ante pulvinar, ut imperdiet velit sodales. Nullam sagittis, velit eget bibendum tristique, elit felis pretium velit, ac laoreet libero nibh viverra mi. Sed at orci non turpis ultricies condimentum quis non dui. Nulla rutrum fermentum odio, in dictum nulla suscipit eu. Phasellus porttitor blandit lorem. In hac habitasse platea dictumst. Aliquam auctor vestibulum lectus eget laoreet. Vestibulum urna leo, molestie porta sapien vitae, pellentesque varius ante. Phasellus ornare lacus sit amet est imperdiet elementum.
+
+Nam feugiat augue hendrerit consequat dictum. Nulla sit amet sem fermentum, rhoncus arcu vel, tincidunt nibh. Curabitur ac aliquam ipsum, suscipit cursus quam. Morbi sit amet tincidunt leo. Vestibulum vel venenatis urna, id vulputate erat. Fusce est nunc, porttitor sit amet dui faucibus, tempor lobortis orci. Duis libero lorem, maximus ut ornare a, ultrices ac enim. Suspendisse potenti. Proin tempus congue purus, nec condimentum diam vulputate et.
+
+In non mattis elit. Nunc augue orci, rhoncus sed quam id, consectetur feugiat lectus. Mauris lacinia purus tristique velit maximus, a ultrices lectus tempor. Proin vitae tortor turpis. Etiam sit amet nisl quis eros ultricies scelerisque id non leo. Nulla lacinia tincidunt feugiat. Praesent eget iaculis erat, at cursus erat. Etiam dapibus erat at luctus scelerisque. Pellentesque fermentum dolor non molestie semper. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed id aliquet erat. Suspendisse tempus dolor ac enim rutrum, at tempus libero egestas.
+
+Aenean in odio id enim aliquet facilisis. Cras semper imperdiet nisi, vitae finibus arcu pretium et. Vestibulum in elementum nunc. Nullam tincidunt, nibh non condimentum dictum, felis mi dictum erat, nec rutrum dui diam nec dolor. Fusce eget est urna. Donec lacus mauris, rhoncus non scelerisque quis, commodo eu ligula. Nulla consectetur faucibus velit, sed congue sem fermentum non. Quisque convallis condimentum aliquam. Fusce sollicitudin egestas mi, non eleifend nulla vulputate egestas. Pellentesque nisl nibh, sollicitudin a augue quis, lacinia suscipit lacus. Integer vulputate in tellus in mattis. Etiam rutrum dui sit amet tellus imperdiet porta. Vestibulum ac augue efficitur, placerat velit ac, tincidunt velit. Curabitur ultrices efficitur sollicitudin.
+
+Morbi fringilla eget velit feugiat tincidunt. Ut bibendum dolor non pellentesque vulputate. Suspendisse mollis lacus turpis, a mattis sem viverra at. Integer dignissim sem iaculis, pellentesque nibh et, sodales nulla. Ut ultricies nibh sit amet ipsum elementum mattis. In lorem nunc, semper vitae magna eu, luctus placerat sem. Morbi mauris quam, efficitur nec facilisis at, iaculis a nibh.
+
+Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet felis tempus imperdiet eu quis metus. Fusce volutpat pharetra eros quis finibus. Donec et luctus ante. Nullam a neque vitae erat condimentum imperdiet vel nec ex. Duis varius elit ac mollis pulvinar. Etiam vestibulum diam at leo scelerisque, a rhoncus justo mollis. Vivamus rutrum lorem eget leo interdum accumsan. Aenean sapien odio, pretium in orci et, suscipit convallis nisl. Fusce metus massa, placerat eu ante sed, dignissim congue sem. Quisque semper sed est quis feugiat. Vivamus tristique leo magna, sed tincidunt nisi varius et. Suspendisse aliquam ullamcorper ligula ac luctus.`
+        },
+
+        {
+            id: 20,
+            title: "The News20",
+            text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
+
+Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
+
+Integer pretium velit non gravida vulputate. Integer varius est vitae aliquet imperdiet. Suspendisse efficitur nunc magna, non dignissim metus imperdiet at. Nullam nec ligula nisl. Etiam et velit quis mauris ullamcorper molestie eget at risus. Vivamus felis tellus, maximus ut elit eget, efficitur tincidunt ex. Ut eget scelerisque orci. Nunc a tincidunt mauris. Vestibulum aliquam vulputate nulla at accumsan. Nulla in mauris quis ante convallis pharetra eu sed elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent iaculis tempor sem.
+
+Maecenas ex nulla, vehicula eu tristique pulvinar, accumsan eu diam. Nam sagittis ex eget felis feugiat porttitor at maximus metus. Ut et luctus lectus. Mauris mauris tellus, condimentum sed nunc eget, blandit finibus quam. Morbi blandit fermentum pulvinar. Integer sit amet ligula maximus, facilisis erat non, semper libero. Aliquam elementum rutrum purus, in sodales tellus interdum non. Aenean euismod sapien non diam convallis, nec mattis enim varius. Quisque eros dolor, ultrices et placerat id, vehicula et risus. Nunc rutrum pharetra congue. Pellentesque at lorem gravida, suscipit nisi in, rutrum nisl. Donec at lectus ut risus lobortis placerat ut at arcu. Proin magna leo, fermentum sed sollicitudin sed, posuere placerat dui. Ut id ex dolor. Donec a risus consectetur, vehicula mauris id, laoreet sem. Nullam sit amet justo scelerisque, convallis dolor quis, sollicitudin eros.
+
+Pellentesque cursus leo risus, in elementum sem ullamcorper nec. Integer velit eros, consequat at gravida bibendum, dictum in orci. Donec ut tincidunt odio. Nullam rhoncus eu nisi nec sodales. Pellentesque ornare est vitae semper pretium. Suspendisse fermentum quam eget sapien malesuada, sit amet consequat neque accumsan. Nam laoreet hendrerit feugiat. Phasellus posuere lorem non erat lobortis, at maximus orci molestie. Nulla consectetur placerat lobortis.
+
+Nulla justo mi, dapibus a tincidunt sit amet, ultrices nec mauris. Phasellus a mi felis. Phasellus vulputate ligula ut dui blandit, in hendrerit erat dapibus. Ut et purus eu lorem aliquam dapibus vitae quis justo. Sed condimentum scelerisque risus, vel euismod dui dictum eget. Vestibulum hendrerit, nulla sit amet volutpat condimentum, nulla nisl dictum arcu, sed dapibus nulla purus ac dui. Integer magna velit, tincidunt vitae volutpat sed, euismod ac nibh. Pellentesque ac enim sollicitudin, rhoncus lectus at, finibus ipsum. Cras interdum lobortis blandit. Pellentesque elementum nulla commodo bibendum tincidunt. Sed tincidunt urna sit amet turpis auctor, eu luctus dui elementum. Vestibulum laoreet dui sit amet libero pulvinar, et malesuada odio maximus. Praesent sit amet velit vel magna vestibulum convallis ut at dui. Praesent vitae pretium tortor. In eget lectus purus.
+
+Pellentesque mollis sem non ex vehicula dapibus. Aliquam dictum dictum mollis. Integer faucibus, ex in finibus hendrerit, ex dui rutrum nisi, et sollicitudin ante magna et ipsum. Nunc auctor libero quis erat efficitur iaculis. Etiam elementum dui sed ante pulvinar, ut imperdiet velit sodales. Nullam sagittis, velit eget bibendum tristique, elit felis pretium velit, ac laoreet libero nibh viverra mi. Sed at orci non turpis ultricies condimentum quis non dui. Nulla rutrum fermentum odio, in dictum nulla suscipit eu. Phasellus porttitor blandit lorem. In hac habitasse platea dictumst. Aliquam auctor vestibulum lectus eget laoreet. Vestibulum urna leo, molestie porta sapien vitae, pellentesque varius ante. Phasellus ornare lacus sit amet est imperdiet elementum.
+
+Nam feugiat augue hendrerit consequat dictum. Nulla sit amet sem fermentum, rhoncus arcu vel, tincidunt nibh. Curabitur ac aliquam ipsum, suscipit cursus quam. Morbi sit amet tincidunt leo. Vestibulum vel venenatis urna, id vulputate erat. Fusce est nunc, porttitor sit amet dui faucibus, tempor lobortis orci. Duis libero lorem, maximus ut ornare a, ultrices ac enim. Suspendisse potenti. Proin tempus congue purus, nec condimentum diam vulputate et.
+
+In non mattis elit. Nunc augue orci, rhoncus sed quam id, consectetur feugiat lectus. Mauris lacinia purus tristique velit maximus, a ultrices lectus tempor. Proin vitae tortor turpis. Etiam sit amet nisl quis eros ultricies scelerisque id non leo. Nulla lacinia tincidunt feugiat. Praesent eget iaculis erat, at cursus erat. Etiam dapibus erat at luctus scelerisque. Pellentesque fermentum dolor non molestie semper. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed id aliquet erat. Suspendisse tempus dolor ac enim rutrum, at tempus libero egestas.
+
+Aenean in odio id enim aliquet facilisis. Cras semper imperdiet nisi, vitae finibus arcu pretium et. Vestibulum in elementum nunc. Nullam tincidunt, nibh non condimentum dictum, felis mi dictum erat, nec rutrum dui diam nec dolor. Fusce eget est urna. Donec lacus mauris, rhoncus non scelerisque quis, commodo eu ligula. Nulla consectetur faucibus velit, sed congue sem fermentum non. Quisque convallis condimentum aliquam. Fusce sollicitudin egestas mi, non eleifend nulla vulputate egestas. Pellentesque nisl nibh, sollicitudin a augue quis, lacinia suscipit lacus. Integer vulputate in tellus in mattis. Etiam rutrum dui sit amet tellus imperdiet porta. Vestibulum ac augue efficitur, placerat velit ac, tincidunt velit. Curabitur ultrices efficitur sollicitudin.
+
+Morbi fringilla eget velit feugiat tincidunt. Ut bibendum dolor non pellentesque vulputate. Suspendisse mollis lacus turpis, a mattis sem viverra at. Integer dignissim sem iaculis, pellentesque nibh et, sodales nulla. Ut ultricies nibh sit amet ipsum elementum mattis. In lorem nunc, semper vitae magna eu, luctus placerat sem. Morbi mauris quam, efficitur nec facilisis at, iaculis a nibh.
+
+Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet felis tempus imperdiet eu quis metus. Fusce volutpat pharetra eros quis finibus. Donec et luctus ante. Nullam a neque vitae erat condimentum imperdiet vel nec ex. Duis varius elit ac mollis pulvinar. Etiam vestibulum diam at leo scelerisque, a rhoncus justo mollis. Vivamus rutrum lorem eget leo interdum accumsan. Aenean sapien odio, pretium in orci et, suscipit convallis nisl. Fusce metus massa, placerat eu ante sed, dignissim congue sem. Quisque semper sed est quis feugiat. Vivamus tristique leo magna, sed tincidunt nisi varius et. Suspendisse aliquam ullamcorper ligula ac luctus.`
+        },
+
+        {
+            id: 21,
+            title: "The News21",
+            text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
+
+Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
+
+Integer pretium velit non gravida vulputate. Integer varius est vitae aliquet imperdiet. Suspendisse efficitur nunc magna, non dignissim metus imperdiet at. Nullam nec ligula nisl. Etiam et velit quis mauris ullamcorper molestie eget at risus. Vivamus felis tellus, maximus ut elit eget, efficitur tincidunt ex. Ut eget scelerisque orci. Nunc a tincidunt mauris. Vestibulum aliquam vulputate nulla at accumsan. Nulla in mauris quis ante convallis pharetra eu sed elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent iaculis tempor sem.
+
+Maecenas ex nulla, vehicula eu tristique pulvinar, accumsan eu diam. Nam sagittis ex eget felis feugiat porttitor at maximus metus. Ut et luctus lectus. Mauris mauris tellus, condimentum sed nunc eget, blandit finibus quam. Morbi blandit fermentum pulvinar. Integer sit amet ligula maximus, facilisis erat non, semper libero. Aliquam elementum rutrum purus, in sodales tellus interdum non. Aenean euismod sapien non diam convallis, nec mattis enim varius. Quisque eros dolor, ultrices et placerat id, vehicula et risus. Nunc rutrum pharetra congue. Pellentesque at lorem gravida, suscipit nisi in, rutrum nisl. Donec at lectus ut risus lobortis placerat ut at arcu. Proin magna leo, fermentum sed sollicitudin sed, posuere placerat dui. Ut id ex dolor. Donec a risus consectetur, vehicula mauris id, laoreet sem. Nullam sit amet justo scelerisque, convallis dolor quis, sollicitudin eros.
+
+Pellentesque cursus leo risus, in elementum sem ullamcorper nec. Integer velit eros, consequat at gravida bibendum, dictum in orci. Donec ut tincidunt odio. Nullam rhoncus eu nisi nec sodales. Pellentesque ornare est vitae semper pretium. Suspendisse fermentum quam eget sapien malesuada, sit amet consequat neque accumsan. Nam laoreet hendrerit feugiat. Phasellus posuere lorem non erat lobortis, at maximus orci molestie. Nulla consectetur placerat lobortis.
+
+Nulla justo mi, dapibus a tincidunt sit amet, ultrices nec mauris. Phasellus a mi felis. Phasellus vulputate ligula ut dui blandit, in hendrerit erat dapibus. Ut et purus eu lorem aliquam dapibus vitae quis justo. Sed condimentum scelerisque risus, vel euismod dui dictum eget. Vestibulum hendrerit, nulla sit amet volutpat condimentum, nulla nisl dictum arcu, sed dapibus nulla purus ac dui. Integer magna velit, tincidunt vitae volutpat sed, euismod ac nibh. Pellentesque ac enim sollicitudin, rhoncus lectus at, finibus ipsum. Cras interdum lobortis blandit. Pellentesque elementum nulla commodo bibendum tincidunt. Sed tincidunt urna sit amet turpis auctor, eu luctus dui elementum. Vestibulum laoreet dui sit amet libero pulvinar, et malesuada odio maximus. Praesent sit amet velit vel magna vestibulum convallis ut at dui. Praesent vitae pretium tortor. In eget lectus purus.
+
+Pellentesque mollis sem non ex vehicula dapibus. Aliquam dictum dictum mollis. Integer faucibus, ex in finibus hendrerit, ex dui rutrum nisi, et sollicitudin ante magna et ipsum. Nunc auctor libero quis erat efficitur iaculis. Etiam elementum dui sed ante pulvinar, ut imperdiet velit sodales. Nullam sagittis, velit eget bibendum tristique, elit felis pretium velit, ac laoreet libero nibh viverra mi. Sed at orci non turpis ultricies condimentum quis non dui. Nulla rutrum fermentum odio, in dictum nulla suscipit eu. Phasellus porttitor blandit lorem. In hac habitasse platea dictumst. Aliquam auctor vestibulum lectus eget laoreet. Vestibulum urna leo, molestie porta sapien vitae, pellentesque varius ante. Phasellus ornare lacus sit amet est imperdiet elementum.
+
+Nam feugiat augue hendrerit consequat dictum. Nulla sit amet sem fermentum, rhoncus arcu vel, tincidunt nibh. Curabitur ac aliquam ipsum, suscipit cursus quam. Morbi sit amet tincidunt leo. Vestibulum vel venenatis urna, id vulputate erat. Fusce est nunc, porttitor sit amet dui faucibus, tempor lobortis orci. Duis libero lorem, maximus ut ornare a, ultrices ac enim. Suspendisse potenti. Proin tempus congue purus, nec condimentum diam vulputate et.
+
+In non mattis elit. Nunc augue orci, rhoncus sed quam id, consectetur feugiat lectus. Mauris lacinia purus tristique velit maximus, a ultrices lectus tempor. Proin vitae tortor turpis. Etiam sit amet nisl quis eros ultricies scelerisque id non leo. Nulla lacinia tincidunt feugiat. Praesent eget iaculis erat, at cursus erat. Etiam dapibus erat at luctus scelerisque. Pellentesque fermentum dolor non molestie semper. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed id aliquet erat. Suspendisse tempus dolor ac enim rutrum, at tempus libero egestas.
+
+Aenean in odio id enim aliquet facilisis. Cras semper imperdiet nisi, vitae finibus arcu pretium et. Vestibulum in elementum nunc. Nullam tincidunt, nibh non condimentum dictum, felis mi dictum erat, nec rutrum dui diam nec dolor. Fusce eget est urna. Donec lacus mauris, rhoncus non scelerisque quis, commodo eu ligula. Nulla consectetur faucibus velit, sed congue sem fermentum non. Quisque convallis condimentum aliquam. Fusce sollicitudin egestas mi, non eleifend nulla vulputate egestas. Pellentesque nisl nibh, sollicitudin a augue quis, lacinia suscipit lacus. Integer vulputate in tellus in mattis. Etiam rutrum dui sit amet tellus imperdiet porta. Vestibulum ac augue efficitur, placerat velit ac, tincidunt velit. Curabitur ultrices efficitur sollicitudin.
+
+Morbi fringilla eget velit feugiat tincidunt. Ut bibendum dolor non pellentesque vulputate. Suspendisse mollis lacus turpis, a mattis sem viverra at. Integer dignissim sem iaculis, pellentesque nibh et, sodales nulla. Ut ultricies nibh sit amet ipsum elementum mattis. In lorem nunc, semper vitae magna eu, luctus placerat sem. Morbi mauris quam, efficitur nec facilisis at, iaculis a nibh.
+
+Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet felis tempus imperdiet eu quis metus. Fusce volutpat pharetra eros quis finibus. Donec et luctus ante. Nullam a neque vitae erat condimentum imperdiet vel nec ex. Duis varius elit ac mollis pulvinar. Etiam vestibulum diam at leo scelerisque, a rhoncus justo mollis. Vivamus rutrum lorem eget leo interdum accumsan. Aenean sapien odio, pretium in orci et, suscipit convallis nisl. Fusce metus massa, placerat eu ante sed, dignissim congue sem. Quisque semper sed est quis feugiat. Vivamus tristique leo magna, sed tincidunt nisi varius et. Suspendisse aliquam ullamcorper ligula ac luctus.`
+        },
+
+        {
+            id: 22,
+            title: "The News22",
             text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus a diam dictum placerat. Nam in condimentum dui. Fusce mattis ex massa, nec accumsan est pulvinar a. Vestibulum id porta quam. Vivamus aliquet, risus eu porta dapibus, massa orci finibus nibh, sit amet dictum nulla nunc id leo. Praesent dictum, purus ac suscipit pharetra, nisl erat ultrices leo, at laoreet purus leo ac turpis. Aenean felis enim, aliquam vitae tellus ac, maximus blandit lectus. Praesent varius diam a mauris vestibulum posuere. Phasellus ut ullamcorper nulla, eu tincidunt purus. Integer at nulla urna.
 
 Integer tincidunt ullamcorper nisi a volutpat. Sed nec massa metus. Ut commodo finibus est at semper. Pellentesque non nisl augue. Phasellus non magna eu diam porttitor condimentum. Aenean imperdiet purus eu neque pellentesque, a lacinia nisl vulputate. Sed ut velit erat. Nunc molestie euismod fermentum. Vestibulum molestie erat massa, quis faucibus neque aliquam nec. Curabitur commodo massa a dui rutrum iaculis.
@@ -508,42 +626,36 @@ Morbi fringilla eget velit feugiat tincidunt. Ut bibendum dolor non pellentesque
 Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet felis tempus imperdiet eu quis metus. Fusce volutpat pharetra eros quis finibus. Donec et luctus ante. Nullam a neque vitae erat condimentum imperdiet vel nec ex. Duis varius elit ac mollis pulvinar. Etiam vestibulum diam at leo scelerisque, a rhoncus justo mollis. Vivamus rutrum lorem eget leo interdum accumsan. Aenean sapien odio, pretium in orci et, suscipit convallis nisl. Fusce metus massa, placerat eu ante sed, dignissim congue sem. Quisque semper sed est quis feugiat. Vivamus tristique leo magna, sed tincidunt nisi varius et. Suspendisse aliquam ullamcorper ligula ac luctus.`
         }
     ],
-    filteredData : [],
-    id : 1,
-    howPage : 1, //on the articles(bottom)
+    filteredData: [],
+    id: 1,
+    howPage: 1, //on the news(bottom)
     text: ''
 }
 
-export const articleReducer = ( state = initionalState, action) => {
 
+export const theNewsReducer = ( state=initionalState, action) => {
+    const theNews = state
     switch (action.type) {
 
-        case GET_ITEM:
-            return {...state, id: action.payload}
+        case GET_ITEM_NEWS:
+            return {...state, id:action.payload}
 
-        case CHANGE_ARTICLES_PAGE:
+        case CHANGE_NEWS_PAGE_NEWS:
             return {...state, howPage: action.payload}
 
-        case CHANGE_INPUT:
+        case CHANGE_INPUT_NEWS:
             return {...state, text: action.payload}
 
-        case CHANGE_FILTERED_DATA:
-            return {...state,
-                filteredData: action.payload
-            }
+        case CHANGE_FILTERED_DATA_NEWS:
+            return {...state, filteredData : action.payload}
 
-        case CHANGE_HOW_MANY_PAGES:
-            return {...state,
-                howManyPages: action.payload
-            }
+        case CHANGE_HOW_MANY_PAGES_NEWS:
+            return {...state, howManyPages: action.payload}
 
         default :
 
-            if(!state.filteredData.length){
-                return {
-                    ...state,
-                    howManyPages: Math.round(state.data.length / 6)
-                }
+            if(!theNews.filteredData.length){
+                return {...state, howManyPages: Math.round(theNews.data.length / 6)}
             }
 
             return {
@@ -551,4 +663,3 @@ export const articleReducer = ( state = initionalState, action) => {
             }
     }
 }
-

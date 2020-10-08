@@ -3,22 +3,13 @@ import './Preloader.css'
 import {MainPage} from '../mainPage/MainPage'
 
 export class Preloader extends React.Component{
+
     constructor(props) {
         super(props)
         this.state = {
             contentReady : false
         }
-
-        // this.getContent = this.getContent.bind(this)
     }
-
-    // getContent(){
-    //     setTimeout(()=>{
-    //         this.setState({
-    //             contentReady : true
-    //         })
-    //     },2900)
-    // }
 
     componentDidMount() {
         this.preloader = setTimeout(() => {
@@ -37,8 +28,6 @@ export class Preloader extends React.Component{
         if(this.state.contentReady){
             return <MainPage/>
         }
-
-        // this.getContent()
 
         return (
             <div className="App">
