@@ -4,9 +4,9 @@ import {
     CHANGE_ARTICLES_PAGE,
     CHANGE_INPUT_ARTICLE,
     CHANGE_FILTERED_DATA,
-    CHANGE_HOW_MANY_PAGES
+    CHANGE_HOW_MANY_PAGES,
+    CONTENT_READY_ARTICLES
 } from "../../types/articleTypes"
-
 
 export function getDataArticle(id){
     return {
@@ -35,7 +35,6 @@ export function changeDataPageArticle(id) {
     }
 }
 
-
 export function changeInputArticle(text){
     return{
         type: CHANGE_INPUT_ARTICLE,
@@ -54,5 +53,12 @@ export function changeHowManyPagesArticle(howPage) {
     return{
         type : CHANGE_HOW_MANY_PAGES,
         payload : howPage
+    }
+}
+
+export function contentReadyArticle() {
+    return{
+        type: CONTENT_READY_ARTICLES,
+        payload: true
     }
 }

@@ -1,6 +1,8 @@
-import React from 'react'
-import './Preloader.css'
-import {MainPage} from '../mainPage/MainPage'
+import React from "react"
+import "./Preloader.css"
+import {MainPage} from "../mainPage/MainPage"
+
+
 
 export class Preloader extends React.Component{
 
@@ -12,11 +14,14 @@ export class Preloader extends React.Component{
     }
 
     componentDidMount() {
-        this.preloader = setTimeout(() => {
-            this.setState({
-                contentReady: true
+        fetch("http://localhost:3000/articles")
+            .then(response => {
+                this.preloader = setTimeout(() => {
+                    this.setState({
+                        contentReady: true
+                    })
+                }, 1500)
             })
-        }, 2900)
     }
 
     componentWillUnmount() {
@@ -80,7 +85,7 @@ export class Preloader extends React.Component{
 
                             {`@media{
                                 svg{
-                                    animation: scale infinite 1.5s linear alternate-reverse;
+                                    animation: scale infinite .8s linear alternate-reverse;
                                 }`
                             }
                             {`@keyframes scale{from {

@@ -2,13 +2,34 @@ import React from "react"
 import {Link} from "react-router-dom"
 import {connect} from "react-redux"
 
-import {changeFilteredDataArticle, getDataArticle} from "../../../../store/actions/article/articleAction"
+import {
+    changeFilteredDataArticle, getDataArticle, contentReadyArticle
+} from "../../../../store/actions/article/articleAction"
+
+import {NotReadyData} from "./notReadyData"
 
 
 class RenderAllArticle extends React.Component{
 
+    componentDidMount() {
+        fetch("http://localhost:3000/articles")
+            .then(response => {
+                 this.contentReady = setInterval(() => {
+                     this.props.contentReadyArticle()
+                }, 500)
+            })
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.contentReady)
+    }
+
     render() {
         const howPage = this.props.articles.howPage
+
+        const text = this.props.articles.text
+
+        const contentReady = this.props.articles.contentReady
 
         const getDataByHowPage = (data,howPage) => {
                 const id = howPage * 6
@@ -18,55 +39,117 @@ class RenderAllArticle extends React.Component{
         const data = getDataByHowPage( this.props.articles.data, howPage )
         const filteredData = getDataByHowPage( this.props.articles.filteredData,howPage)
 
-
-        if( this.props.articles.text ){
+        if(text){
 
             if(filteredData.length === 0){
                 return <p className='message'>Articles is Not defined</p>
             }
 
-            return (
-                <div className='articles'>
-                    {
-                        filteredData.map(i => {
-                            return (
-                                <div className="article" key={i.id}>
-                                    <h2>{i.title}</h2>
+            switch (contentReady){
+                case true:
+                    return (
+                        <div className='articles'>
+                            {
+                                filteredData.map(i => {
+                                    return (
+                                        <div className="article" key={i.id}>
+                                            <h2>{i.title}</h2>
 
-                                    <div className='read-btn-wrapper'>
-                                        <Link onClick={() => this.props.getDataArticle(i.id)} to='/article' className='read-btn'>
-                                            read
-                                        </Link>
-                                    </div>
-                                </div>
-                            )
-                        })
-                    }
-                </div>
-            )
+                                            <div className="img" style={{
+                                                background: `url(image/articles/${i.id}.jpg)`,
+                                                backgroundSize: "cover"
+                                            }}></div>
+
+                                            <div className='read-btn-wrapper'>
+                                                <Link onClick={() => this.props.getDataArticle(i.id)} to='/article' className='read-btn'>
+                                                    read
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    )
+
+                default:
+                    return (
+                        <div className='articles'>
+                            {
+                                filteredData.map(i => {
+                                    return (
+                                        <div className="article" key={i.id}>
+                                            <h2>{i.title}</h2>
+
+                                            <NotReadyData/>
+
+                                            <div className='read-btn-wrapper'>
+                                                <Link onClick={() => this.props.getDataArticle(i.id)} to='/article' className='read-btn'>
+                                                    read
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    )
+            }
 
         }
 
-        return (
-            <div className='articles'>
-                {
-                    data.map(i => {
-                        return (
-                            <div className="article" key={i.id}>
-                                <h2>{i.title}</h2>
+        switch (contentReady){
 
-                                <div className='read-btn-wrapper'>
-                                    <Link onClick={() => this.props.getDataArticle(i.id)} to='/article' className='read-btn'>
-                                        read
-                                    </Link>
-                                </div>
-                            </div>
-                        )
-                    })
-                }
-            </div>
-        )
+            case true:
+                return (
+                    <div className='articles'>
+                        {
+                            data.map(i => {
+                                return (
+                                    <div className="article" key={i.id}>
+                                        <h2>{i.title}</h2>
 
+
+                                        <div className="img" style={{
+                                            background: `url(image/articles/${i.id}.jpg)`,
+                                            backgroundSize: "cover"
+                                        }}></div>
+
+                                        <div className="read-btn-wrapper">
+                                            <Link onClick={() => this.props.getDataArticle(i.id)} to='/article' className='read-btn'>
+                                                read
+                                            </Link>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                )
+
+            default:
+                return (
+                    <div className='articles'>
+                        {
+                            data.map(i => {
+                                return (
+                                    <div className="article" key={i.id}>
+                                        <h2>{i.title}</h2>
+
+                                        <NotReadyData/>
+
+                                        <div className="read-btn-wrapper">
+                                            <Link onClick={() => this.props.getDataArticle(i.id)} to='/article' className='read-btn'>
+                                                read
+                                            </Link>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                )
+        }
     }
 }
 
@@ -76,7 +159,8 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = {
     getDataArticle,
-    changeFilteredDataArticle
+    changeFilteredDataArticle,
+    contentReadyArticle
 }
 
 

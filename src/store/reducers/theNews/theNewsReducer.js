@@ -3,7 +3,8 @@ import {
     CHANGE_FILTERED_DATA_NEWS,
     CHANGE_HOW_MANY_PAGES_NEWS,
     CHANGE_INPUT_NEWS,
-    GET_ITEM_NEWS
+    GET_ITEM_NEWS,
+    CONTENT_READY_NEWS
 } from "../../types/theNewsTypes"
 
 const initionalState = {
@@ -629,37 +630,43 @@ Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet fel
     filteredData: [],
     id: 1,
     howPage: 1, //on the news(bottom)
-    text: ''
+    text: '',
+    contentReady: false,
 }
 
-
 export const theNewsReducer = ( state=initionalState, action) => {
-    const theNews = state
-    switch (action.type) {
+        switch (action.type) {
 
-        case GET_ITEM_NEWS:
-            return {...state, id:action.payload}
+            case GET_ITEM_NEWS:
+                return {...state, id:action.payload}
 
-        case CHANGE_NEWS_PAGE_NEWS:
-            return {...state, howPage: action.payload}
+            case CHANGE_NEWS_PAGE_NEWS:
+                return {...state, howPage: action.payload, contentReady: false}
 
-        case CHANGE_INPUT_NEWS:
-            return {...state, text: action.payload}
+            case CHANGE_INPUT_NEWS:
+                return {...state, text: action.payload, contentReady: false}
 
-        case CHANGE_FILTERED_DATA_NEWS:
-            return {...state, filteredData : action.payload}
+            case CHANGE_FILTERED_DATA_NEWS:
+                return {...state, filteredData : action.payload}
 
-        case CHANGE_HOW_MANY_PAGES_NEWS:
-            return {...state, howManyPages: action.payload}
+            case CHANGE_HOW_MANY_PAGES_NEWS:
+                return {...state, howManyPages: action.payload}
 
-        default :
+            case CONTENT_READY_NEWS:
+                return {...state, contentReady: true}
 
-            if(!theNews.filteredData.length){
-                return {...state, howManyPages: Math.round(theNews.data.length / 6)}
-            }
+            default :
 
-            return {
-                ...state
-            }
-    }
+                if(!state.filteredData.length){
+                    return {
+                        ...state,
+                        howManyPages: Math.round(state.data.length / 6),
+                        contentReady: false
+                    }
+                }
+
+                return {
+                    ...state, contentReady: false
+                }
+        }
 }

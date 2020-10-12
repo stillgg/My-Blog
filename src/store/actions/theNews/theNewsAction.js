@@ -4,7 +4,8 @@ import {
     CHANGE_NEWS_PAGE_NEWS,
     CHANGE_INPUT_NEWS,
     CHANGE_FILTERED_DATA_NEWS,
-    CHANGE_HOW_MANY_PAGES_NEWS
+    CHANGE_HOW_MANY_PAGES_NEWS,
+    CONTENT_READY_NEWS
 } from "../../types/theNewsTypes"
 
 
@@ -53,5 +54,12 @@ export function changeHowManyPagesTheNews(howPage) {
     return{
         type : CHANGE_HOW_MANY_PAGES_NEWS,
         payload : howPage
+    }
+}
+
+export function contentReadyTheNews() {
+    return{
+        type: CONTENT_READY_NEWS,
+        payload: true
     }
 }

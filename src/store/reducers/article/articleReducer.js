@@ -3,7 +3,8 @@ import {
     CHANGE_ARTICLES_PAGE,
     CHANGE_INPUT_ARTICLE,
     CHANGE_FILTERED_DATA,
-    CHANGE_HOW_MANY_PAGES
+    CHANGE_HOW_MANY_PAGES,
+    CONTENT_READY_ARTICLES
 } from '../../types/articleTypes'
 
 const initionalState = {
@@ -518,6 +519,7 @@ Etiam ac quam accumsan, tristique ex eget, congue ex. Sed sed velit sit amet fel
     id: 1,
     howPage: 1, //on the articles(bottom)
     text: '',
+    contentReady: false,
 }
 
 export const articleReducer = ( state = initionalState, action) => {
@@ -527,10 +529,10 @@ export const articleReducer = ( state = initionalState, action) => {
             return {...state, id: action.payload}
 
         case CHANGE_ARTICLES_PAGE:
-            return {...state, howPage: action.payload}
+            return {...state, howPage: action.payload, contentReady: false}
 
         case CHANGE_INPUT_ARTICLE:
-            return {...state, text: action.payload}
+            return {...state, text: action.payload, contentReady: false}
 
         case CHANGE_FILTERED_DATA:
             return {...state, filteredData: action.payload}
@@ -538,14 +540,21 @@ export const articleReducer = ( state = initionalState, action) => {
         case CHANGE_HOW_MANY_PAGES:
             return {...state, howManyPages: action.payload}
 
+        case CONTENT_READY_ARTICLES:
+            return {...state, contentReady: true}
+
         default :
 
             if(!state.filteredData.length){
-                return {...state, howManyPages:Math.round(state.data.length / 6) }
+                return {
+                    ...state,
+                    howManyPages:Math.round(state.data.length / 6),
+                    contentReady: false
+                }
             }
 
             return {
-                ...state
+                ...state, contentReady: false
             }
     }
 }
