@@ -1,5 +1,4 @@
 import React from "react"
-import {Link} from "react-router-dom"
 import {connect} from "react-redux"
 
 import {
@@ -8,7 +7,7 @@ import {
     contentReadyTheNews
 } from "../../../../store/actions/theNews/theNewsAction"
 
-import {NotReadyData} from "../articles/notReadyData"
+import Card from "../card"
 
 
 class RenderAllNews extends React.Component{
@@ -30,8 +29,6 @@ class RenderAllNews extends React.Component{
         const text = this.props.theNews.text
         const contentReady = this.props.theNews.contentReady
 
-        console.log(contentReady)
-
         const getDataByHowPage = (data,howPage) => {
             const id = howPage * 6
             return data.slice(id-6,id)
@@ -49,24 +46,33 @@ class RenderAllNews extends React.Component{
             switch (contentReady) {
                 case true:
                     return (
-                        <div className='articles'>
+                        <div className='blockNews'>
                             {
                                 filteredData.map(i => {
                                     return (
-                                        <div className="article" key={i.id}>
-                                            <h2>{i.title}</h2>
+                                        <Card
+                                            className="theNewsCard"
+                                            key={i.id}
+                                            id={i.id}
+                                            routTo="/news"
+                                            title={i.title}
+                                            urlImg={`url(image/theNews/${i.id}.jpg)`}
+                                        />
 
-                                            <div className="img" style={{
-                                                background: `url(image/theNews/${i.id}.jpg)`,
-                                                backgroundSize: "cover"
-                                            }}></div>
-
-                                            <div className='read-btn-wrapper'>
-                                                <Link onClick={() => this.props.getDataTheNews(i.id)} to='/news' className='read-btn'>
-                                                    read
-                                                </Link>
-                                            </div>
-                                        </div>
+                                        // <div className="news" key={i.id}>
+                                        //     <h2>{i.title}</h2>
+                                        //
+                                        //     <div className="img" style={{
+                                        //         background: `url(image/theNews/${i.id}.jpg)`,
+                                        //         backgroundSize: "cover"
+                                        //     }}></div>
+                                        //
+                                        //     <div className='read-btn-wrapper'>
+                                        //         <Link onClick={() => this.props.getDataTheNews(i.id)} to='/news' className='read-btn'>
+                                        //             read
+                                        //         </Link>
+                                        //     </div>
+                                        // </div>
                                     )
                                 })
                             }
@@ -75,21 +81,30 @@ class RenderAllNews extends React.Component{
 
                 default:
                     return (
-                        <div className='articles'>
+                        <div className='blockNews'>
                             {
                                 filteredData.map(i => {
                                     return (
-                                        <div className="article" key={i.id}>
-                                            <h2>{i.title}</h2>
+                                        <Card
+                                            className="theNewsCard"
+                                            key={i.id}
+                                            id={i.id}
+                                            routTo="/news"
+                                            title={i.title}
+                                            onClickMethod={ this.props.getDataTheNews }
+                                        />
 
-                                            <NotReadyData/>
-
-                                            <div className='read-btn-wrapper'>
-                                                <Link onClick={() => this.props.getDataTheNews(i.id)} to='/news' className='read-btn'>
-                                                    read
-                                                </Link>
-                                            </div>
-                                        </div>
+                                        // <div className="article" key={i.id}>
+                                        //     <h2>{i.title}</h2>
+                                        //
+                                        //     <NotReadyData/>
+                                        //
+                                        //     <div className='read-btn-wrapper'>
+                                        //         <Link onClick={() => this.props.getDataTheNews(i.id)} to='/news' className='read-btn'>
+                                        //             read
+                                        //         </Link>
+                                        //     </div>
+                                        // </div>
                                     )
                                 })
                             }
@@ -101,23 +116,32 @@ class RenderAllNews extends React.Component{
         switch (contentReady) {
             case true:
                 return (
-                    <div className='articles'>
+                    <div className='blockNews'>
                         {
                             data.map(i => {
                                 return (
-                                    <div className="article" key={i.id}>
-                                        <h2>{i.title}</h2>
-                                        <div className="img" style={{
-                                            background: `url(image/theNews/${i.id}.jpg)`,
-                                            backgroundSize: "cover"
-                                        }}>
-                                        </div>
-                                        <div className='read-btn-wrapper'>
-                                            <Link onClick={() => this.props.getDataTheNews(i.id)} to='/news' className='read-btn'>
-                                                read
-                                            </Link>
-                                        </div>
-                                    </div>
+                                    <Card
+                                        className="theNewsCard"
+                                        key={i.id}
+                                        id={i.id}
+                                        routTo="/news"
+                                        title={i.title}
+                                        urlImg={`url(image/theNews/${i.id}.jpg)`}
+                                    />
+
+                                    // <div className="article" key={i.id}>
+                                    //     <h2>{i.title}</h2>
+                                    //     <div className="img" style={{
+                                    //         background: `url(image/theNews/${i.id}.jpg)`,
+                                    //         backgroundSize: "cover"
+                                    //     }}>
+                                    //     </div>
+                                    //     <div className='read-btn-wrapper'>
+                                    //         <Link onClick={() => this.props.getDataTheNews(i.id)} to='/news' className='read-btn'>
+                                    //             read
+                                    //         </Link>
+                                    //     </div>
+                                    // </div>
                                 )
                             })
                         }
@@ -129,15 +153,23 @@ class RenderAllNews extends React.Component{
                         {
                             data.map(i => {
                                 return (
-                                    <div className="article" key={i.id}>
-                                        <h2>{i.title}</h2>
-                                        <NotReadyData/>
-                                        <div className='read-btn-wrapper'>
-                                            <Link onClick={() => this.props.getDataTheNews(i.id)} to='/news' className='read-btn'>
-                                                read
-                                            </Link>
-                                        </div>
-                                    </div>
+                                    <Card
+                                        className="theNewsCard"
+                                        key={i.id}
+                                        id={i.id}
+                                        routTo="/news"
+                                        title={i.title}
+                                        // onClick={() => this.props.getDataTheNews(i.id)}
+                                    />
+                                    // <div className="article" key={i.id}>
+                                    //     <h2>{i.title}</h2>
+                                    //     <NotReadyData/>
+                                    //     <div className='read-btn-wrapper'>
+                                    //         <Link onClick={() => this.props.getDataTheNews(i.id)} to='/news' className='read-btn'>
+                                    //             read
+                                    //         </Link>
+                                    //     </div>
+                                    // </div>
                                 )
                             })
                         }

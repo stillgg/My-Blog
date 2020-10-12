@@ -26,6 +26,8 @@ class ReadNews extends React.Component{
         const article = this.props.theNews.data[id-1]
         const value = this.props.readNews.value
 
+        console.log(this.props.theNews)
+
         return (
             <div className='readArticle'>
                 <div className="wrapper">
