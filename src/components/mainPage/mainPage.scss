@@ -355,9 +355,25 @@ a {
   .Nav{
     background: #4e4e4e;
     width: 25%;
+    left: -20%;
+    //left: 0;
     height: 100vh;
-    position: relative;
+    position: fixed;
     text-align: center;
+    transition: .5s all;
+    &:hover{
+      left: 0;
+      transition: .5s all;
+    }
+    &:hover ~ .Main{
+      left: 25%;
+      transition: .5s all;
+      .wrapper {
+        .title {
+          left: 25%;
+        }
+      }
+    }
     .MyBlog{
       position: absolute;
       width: 100%;
@@ -393,10 +409,12 @@ a {
   }
 
   .Main {
-
-    width: 80%;
+    width: 75%;
     padding: 15px;
+    position: relative;
 
+    left: 15%;
+    transition: .5s all;
     .message{
       font-size: 1.5rem;
       text-align: center;
@@ -820,16 +838,20 @@ a {
     }
 
     .readArticle{
+      position: relative;
+      //left: -15%;
       .wrapper{
         margin: 0 auto;
         .title{
-          width: 74%;
+          width: 75%;
           background: #ffffff;
           position: fixed;
           top: 0;
+          //left: 25%;
           text-align: center;
           height: 65px;
-
+          left: 18%;
+          transition: .5s all;
           .contentLine{
             .value{
               font-size: 1.5rem;
@@ -864,8 +886,8 @@ a {
         .articleText{
           font-size: 1.3rem;
           line-height: 2.8rem;
-          width: 80%;
-          margin: 80px auto 0;
+          width: 95%;
+          margin: 80px auto 0 3%;
         }
       }
 

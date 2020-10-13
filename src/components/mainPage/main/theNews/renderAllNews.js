@@ -58,21 +58,6 @@ class RenderAllNews extends React.Component{
                                             title={i.title}
                                             urlImg={`url(image/theNews/${i.id}.jpg)`}
                                         />
-
-                                        // <div className="news" key={i.id}>
-                                        //     <h2>{i.title}</h2>
-                                        //
-                                        //     <div className="img" style={{
-                                        //         background: `url(image/theNews/${i.id}.jpg)`,
-                                        //         backgroundSize: "cover"
-                                        //     }}></div>
-                                        //
-                                        //     <div className='read-btn-wrapper'>
-                                        //         <Link onClick={() => this.props.getDataTheNews(i.id)} to='/news' className='read-btn'>
-                                        //             read
-                                        //         </Link>
-                                        //     </div>
-                                        // </div>
                                     )
                                 })
                             }
@@ -91,20 +76,7 @@ class RenderAllNews extends React.Component{
                                             id={i.id}
                                             routTo="/news"
                                             title={i.title}
-                                            onClickMethod={ this.props.getDataTheNews }
                                         />
-
-                                        // <div className="article" key={i.id}>
-                                        //     <h2>{i.title}</h2>
-                                        //
-                                        //     <NotReadyData/>
-                                        //
-                                        //     <div className='read-btn-wrapper'>
-                                        //         <Link onClick={() => this.props.getDataTheNews(i.id)} to='/news' className='read-btn'>
-                                        //             read
-                                        //         </Link>
-                                        //     </div>
-                                        // </div>
                                     )
                                 })
                             }
@@ -128,20 +100,6 @@ class RenderAllNews extends React.Component{
                                         title={i.title}
                                         urlImg={`url(image/theNews/${i.id}.jpg)`}
                                     />
-
-                                    // <div className="article" key={i.id}>
-                                    //     <h2>{i.title}</h2>
-                                    //     <div className="img" style={{
-                                    //         background: `url(image/theNews/${i.id}.jpg)`,
-                                    //         backgroundSize: "cover"
-                                    //     }}>
-                                    //     </div>
-                                    //     <div className='read-btn-wrapper'>
-                                    //         <Link onClick={() => this.props.getDataTheNews(i.id)} to='/news' className='read-btn'>
-                                    //             read
-                                    //         </Link>
-                                    //     </div>
-                                    // </div>
                                 )
                             })
                         }
@@ -149,7 +107,7 @@ class RenderAllNews extends React.Component{
                 )
             default:
                 return (
-                    <div className='articles'>
+                    <div className='blockNews'>
                         {
                             data.map(i => {
                                 return (
@@ -159,17 +117,7 @@ class RenderAllNews extends React.Component{
                                         id={i.id}
                                         routTo="/news"
                                         title={i.title}
-                                        // onClick={() => this.props.getDataTheNews(i.id)}
                                     />
-                                    // <div className="article" key={i.id}>
-                                    //     <h2>{i.title}</h2>
-                                    //     <NotReadyData/>
-                                    //     <div className='read-btn-wrapper'>
-                                    //         <Link onClick={() => this.props.getDataTheNews(i.id)} to='/news' className='read-btn'>
-                                    //             read
-                                    //         </Link>
-                                    //     </div>
-                                    // </div>
                                 )
                             })
                         }

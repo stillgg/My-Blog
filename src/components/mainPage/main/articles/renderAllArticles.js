@@ -1,12 +1,11 @@
 import React from "react"
-import {Link} from "react-router-dom"
+
 import {connect} from "react-redux"
 
 import {
     changeFilteredDataArticle, getDataArticle, contentReadyArticle
 } from "../../../../store/actions/article/articleAction"
 
-import {NotReadyData} from "./notReadyData"
 import Card from "../card"
 
 
@@ -61,20 +60,6 @@ class RenderAllArticle extends React.Component{
                                             title={i.title}
                                             urlImg={`url(image/articles/${i.id}.jpg)`}
                                         />
-                                        // <div className="article" key={i.id}>
-                                        //     <h2>{i.title}</h2>
-                                        //
-                                        //     <div className="img" style={{
-                                        //         background: `url(image/articles/${i.id}.jpg)`,
-                                        //         backgroundSize: "cover"
-                                        //     }}></div>
-                                        //
-                                        //     <div className='read-btn-wrapper'>
-                                        //         <Link onClick={() => this.props.getDataArticle(i.id)} to='/article' className='read-btn'>
-                                        //             read
-                                        //         </Link>
-                                        //     </div>
-                                        // </div>
                                     )
                                 })
                             }
@@ -95,19 +80,6 @@ class RenderAllArticle extends React.Component{
                                             title={i.title}
                                         />
                                     )
-                                    // return (
-                                    //     <div className="article" key={i.id}>
-                                    //         <h2>{i.title}</h2>
-                                    //
-                                    //         <NotReadyData/>
-                                    //
-                                    //         <div className='read-btn-wrapper'>
-                                    //             <Link onClick={() => this.props.getDataArticle(i.id)} to='/article' className='read-btn'>
-                                    //                 read
-                                    //             </Link>
-                                    //         </div>
-                                    //     </div>
-                                    // )
                                 })
                             }
                         </div>
@@ -133,24 +105,6 @@ class RenderAllArticle extends React.Component{
                                         urlImg={`url(image/articles/${i.id}.jpg)`}
                                     />
                                 )
-                                // return (
-
-                                    // <div className="article" key={i.id}>
-                                    //     <h2>{i.title}</h2>
-                                    //
-                                    //
-                                    //     <div className="img" style={{
-                                    //         background: `url(image/articles/${i.id}.jpg)`,
-                                    //         backgroundSize: "cover"
-                                    //     }}></div>
-                                    //
-                                    //     <div className="read-btn-wrapper">
-                                    //         <Link onClick={() => this.props.getDataArticle(i.id)} to='/article' className='read-btn'>
-                                    //             read
-                                    //         </Link>
-                                    //     </div>
-                                    // </div>
-                                // )
                             })
                         }
                     </div>
@@ -168,22 +122,8 @@ class RenderAllArticle extends React.Component{
                                         id={i.id}
                                         routTo="/article"
                                         title={i.title}
-                                        urlImg={`url(image/articles/${i.id}.jpg)`}
                                     />
                                 )
-                                // return (
-                                //     <div className="article" key={i.id}>
-                                //         <h2>{i.title}</h2>
-                                //
-                                //         <NotReadyData/>
-                                //
-                                //         <div className="read-btn-wrapper">
-                                //             <Link onClick={() => this.props.getDataArticle(i.id)} to='/article' className='read-btn'>
-                                //                 read
-                                //             </Link>
-                                //         </div>
-                                //     </div>
-                                // )
                             })
                         }
                     </div>
