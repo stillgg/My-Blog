@@ -356,11 +356,11 @@ a {
     background: #4e4e4e;
     width: 25%;
     left: -20%;
-    //left: 0;
     height: 100vh;
     position: fixed;
     text-align: center;
     transition: .5s all;
+
     &:hover{
       left: 0;
       transition: .5s all;
@@ -374,6 +374,8 @@ a {
         }
       }
     }
+
+
     .MyBlog{
       position: absolute;
       width: 100%;
@@ -412,15 +414,16 @@ a {
     width: 75%;
     padding: 15px;
     position: relative;
-
     left: 15%;
     transition: .5s all;
+
     .message{
       font-size: 1.5rem;
       text-align: center;
     }
 
     .articlesWrapper{
+      left: 0;
       .header {
         display: flex;
         justify-content: flex-start;
@@ -485,6 +488,7 @@ a {
             }
           }
           input {
+
             font-family: $font;
             font-size: 1rem;
             position: absolute;
@@ -544,7 +548,7 @@ a {
                 height: 2px;
                 border: none;
                 background: white;
-                border-radius: 0%;
+                border-radius: 0;
                 transform: rotate(-45deg);
               }
             }
@@ -580,6 +584,7 @@ a {
             width: 90%;
             border-radius: 5px;
             padding: 5px;
+
             box-shadow: $boxShadow;
             transition: .5s all;
             position: absolute;
@@ -600,16 +605,29 @@ a {
               }
             }
           }
-
         }
+
+        @media (min-width:1700px) {
+          .articleCard,.theNewsCard{
+            width: 375px;
+            min-height: 450px;
+            .img{
+              height: 270px;
+            }
+          }
+
+          .read-btn-wrapper{
+            padding: 8px;
+          }
+        }
+
       }
 
       .prevNextButtons{
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-
-        margin-top: 20px;
+        margin: 20px 0;
         width: 100%;
         height: 40px;
 
@@ -719,15 +737,14 @@ a {
         }
       }
     }
-
     .aboutMe{
+      padding-left: 30px;
       p{
         font-size: 1.5rem;
       }
       .contactsWrapper{
         width: 400px;
         margin: 0 auto;
-        //box-shadow: 0 0 10px rgba(0,0,0,0.5);
         .contacts{
           padding: 20px;
 
@@ -857,7 +874,8 @@ a {
               font-size: 1.5rem;
               position: absolute;
               top: 35px;
-              left: 93%;
+              //left: 93%;
+              right: 15px;
             }
 
             .line{
@@ -895,6 +913,211 @@ a {
   }
 }
 
+
+@media (max-width: 1250px) {
+  .glitch-btn{
+    width: 55%;
+    left: 47.5%;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 1039px) {
+  .glitch-btn{
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 890px) {
+  .glitch-btn{
+    width: 57%;
+    font-size: 1.6rem;
+  }
+}
+
+@media(max-width: 787px){
+
+  .glitch-btn{
+    width: auto;
+    font-size: 2rem;
+    left: 50%;
+  }
+
+  .header {
+    height: 150px;
+  }
+
+  .MainPage {
+
+    .Nav {
+      height: 100%;
+      width: 100%;
+      z-index: 1000;
+      opacity: .9;
+      left: -90%;
+
+      &:hover{
+        transition: .5s all;
+      }
+
+      .Articles {
+        .glitch-btn:hover .Nav{
+          left: 5%;
+          transition: .5s all;
+        }
+      }
+
+      &:hover ~ .Main {
+        left: 10%;
+        transition: .5s all;
+
+        .wrapper {
+          .title {
+            left: 10%;
+          }
+        }
+      }
+
+      .hiddenNavBtn{
+        position: absolute;
+        right: 0;
+        width: 10%;
+        height: 100%;
+        //background: red;
+        z-index: 10000;
+      }
+
+
+      //&:hover:before {
+      //
+      //  content: "";
+      //  position: absolute;
+      //  height: 5vw;
+      //  width: 5vw;
+      //  background: $green;
+      //  clip-path: polygon(
+      //                  20% 0%, 0% 20%, 30% 50%,
+      //                  0% 80%, 20% 100%, 50% 70%,
+      //                  80% 100%, 100% 80%, 70% 50%,
+      //                  100% 20%, 80% 0%, 50% 30%
+      //  );
+      //  transition: .5s all;
+      //  &:hover{
+      //    background: white;
+      //  }
+      //  animation: none;
+      //}
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 20px;
+        width: 15px;
+        background: white;
+        top: 18px;
+        right: calc(5% + 10px);
+        clip-path: polygon(100% 50%, 0 100%, 0 0);
+        transition: .5s all;
+        animation: go-right-left 1s infinite alternate;
+      }
+
+
+      @keyframes go-right-left {
+        from {
+          right: 15px;
+        }
+        to {
+          right: 5px
+        }
+      }
+
+
+    }
+
+    .startPageContainer{
+      padding-left: 30px;
+    }
+
+    .activeNav{
+
+      &:hover{
+        left: -90%;
+        transition: .5s all;
+      }
+    }
+
+    .Main {
+      width: 100%;
+      padding: 0;
+      position: relative;
+      left: 10%;
+
+      .aboutMe {
+        width: 100%;
+      }
+
+      .articlesWrapper {
+        left: 0;
+
+        .header {
+          margin-left: 30px;
+        }
+
+        .header .container {
+          width: 200px;
+          position: absolute;
+          top: 60px;
+          left: -10px;
+          input{
+            &:focus {
+              width: 250px;
+            }
+            &:focus ~ .search {
+              right: -300px;
+            }
+          }
+        }
+
+        .articles, .blockNews {
+          .articleCard, .theNewsCard {
+            margin:30px;
+          }
+
+          //.articleCard:last-child, .theNewsCard:last-child {
+          //  margin: 0 0 0;
+          //}
+        }
+      }
+
+      .readArticle {
+        .wrapper {
+          .title {
+            width: 90%;
+            left: 10%;
+          }
+        }
+
+      }
+
+      .header{
+        .container{
+          left: -40px;
+        }
+
+      }
+
+      .contactsWrapper{
+        width: 100%;
+
+        .contacts{
+          display: none;
+        }
+
+      }
+    }
+
+  }
+}
 
 
 

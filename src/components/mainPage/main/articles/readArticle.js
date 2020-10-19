@@ -8,14 +8,10 @@ import {getPositionArticle} from "../../../../store/actions/article/articleActio
 
 
 class ReadArticle extends React.Component{
-    constructor(props) {
-        super(props)
-    }
-
     componentDidMount() {
         this.getPosition = setInterval(()=>{
                 const x = (window.pageYOffset * 100) / (document.body.scrollHeight - document.documentElement.clientHeight)
-                return this.props.getPositionArticle(Math.round(x))
+                return this.props.getPositionArticle(Math.ceil(x))
             },100)
     }
 

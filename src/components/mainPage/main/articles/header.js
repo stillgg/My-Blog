@@ -11,6 +11,7 @@ import {
 const Header = (props)=>{
     const data = props.articles.data
     const text = props.articles.text
+
     return(
         <div className="header">
             <h1>Articles</h1>
@@ -20,13 +21,16 @@ const Header = (props)=>{
                        onChange={(e) => {
                            props.changeInputArticle(e.target.value)
 
-                           const filteredData = data.filter(item => {
+
+                           const filteredData = data.filter( item => {
                                const compareValue = item.title.toLowerCase().replace(/\s/g, '')
                                const valueInState = e.target.value.toLowerCase().replace(/\s/g, '')
 
                                if (compareValue.includes(valueInState)) {
                                    return item
                                }
+
+                               return false
                            })
 
                            props.changeFilteredDataArticle(filteredData)
@@ -37,7 +41,9 @@ const Header = (props)=>{
                            props.changeDataPageArticle(1)
                        }}
                        value={text}
-                       maxLength="18"/>
+                       maxLength="18"
+                       className="searchInput"
+                />
                 <div className="search"></div>
             </div>
         </div>

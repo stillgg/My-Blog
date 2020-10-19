@@ -1,6 +1,6 @@
 import React from 'react'
-import {Route, Router, Switch} from 'react-router-dom'
-
+import {Route} from 'react-router-dom'
+//Router, Switch
 
 import StartPage from "./startPage/startPage"
 import ReadArticle from "./articles/readArticle"

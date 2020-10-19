@@ -6,14 +6,11 @@ import {getPositionTheNews} from "../../../../store/actions/theNews/theNewsActio
 
 
 class ReadNews extends React.Component{
-    constructor(props) {
-        super(props)
-    }
 
     componentDidMount() {
         this.getPosition = setInterval(()=>{
             const x = (window.pageYOffset * 100) / (document.body.scrollHeight - document.documentElement.clientHeight)
-            return this.props.getPositionTheNews(Math.round(x))
+            return this.props.getPositionTheNews(Math.ceil(x))
         },100)
     }
 
@@ -25,8 +22,6 @@ class ReadNews extends React.Component{
         const id = this.props.theNews.id
         const article = this.props.theNews.data[id-1]
         const value = this.props.readNews.value
-
-        console.log(this.props.theNews)
 
         return (
             <div className='readArticle'>

@@ -18,12 +18,12 @@ export function AboutMe() {
 
                         <div className="textImg">
                             <img className="iconGmail" src="./iconGmail.svg" alt="gmail"/>
-                            <a href="https://mail.google.com/mail" target="_blank">still2095@gmail.com</a>
+                            <a href="https://mail.google.com/mail" target="_blank" rel="noopener noreferrer">still2095@gmail.com</a>
                         </div>
 
                         <div className="textImg">
                             <img className="iconGithub" src="./iconGithub.svg" alt="github"/>
-                            <a href="https://github.com/stillgg" target="_blank">stillgg</a>
+                            <a href="https://github.com/stillgg" target="_blank" rel="noopener noreferrer">stillgg</a>
                         </div>
                     </div>
 

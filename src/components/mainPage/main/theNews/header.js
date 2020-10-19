@@ -28,6 +28,7 @@ const HeaderTheNews = (props)=>{
                                if (compareValue.includes(valueInState)) {
                                    return item
                                }
+                               return false
                            })
 
                            props.changeFilteredDataTheNews(filteredData)
