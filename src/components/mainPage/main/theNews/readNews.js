@@ -10,6 +10,12 @@ class ReadNews extends React.Component{
     componentDidMount() {
         this.getPosition = setInterval(()=>{
             const x = (window.pageYOffset * 100) / (document.body.scrollHeight - document.documentElement.clientHeight)
+            // const value = this.props.getPositionTheNews(Math.ceil(x))
+
+            if (Math.ceil(x) === 101) {
+                return this.props.getPositionTheNews(100)
+            }
+
             return this.props.getPositionTheNews(Math.ceil(x))
         },100)
     }
@@ -30,7 +36,6 @@ class ReadNews extends React.Component{
                         <h2>{article.title}</h2>
                         <div className='contentLine'>
                             <span className='value'>{value}%</span>
-
                             <div className='lineWrapper'></div>
                             <div className='line' style={{ width: value + '%' }}></div>
                         </div>
